@@ -7,7 +7,7 @@ import { fetchRequest } from '../store/booksList/actions';
 import { bookCountChanged } from '../store/booksCount/actions';
 import { ApplicationState, ConnectedReduxProps } from '../store';
 import { connect } from 'react-redux'
-import ImageUploader from 'react-images-upload';
+
 
 
 
@@ -60,19 +60,12 @@ import ImageUploader from 'react-images-upload';
     }
 
     public render() {
-
-       let {imagePreviewUrl} = this.state;
-    let $imagePreview = null;
-    if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} />);
-    }
     const { data } = this.props
     
       return (
         <Page>
           <Container>
-            <input type="file" onChange={this._handleImageChange} />
-            {$imagePreview}
+          
             <CardList>
               {data.map(book => (
                 <Card>
