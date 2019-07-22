@@ -9,7 +9,7 @@ import { isLogUser } from '../store/isLoginUser/actions';
 import { ConnectedReduxProps, ApplicationState } from '../store';
 import { connect } from 'react-redux';
 import jwt from 'jwt-decode';
-import User, {UserRegister} from '../store/register/types'
+import {User,UserRegister} from '../store/register/types'
 
 
 interface PropsFromState {
@@ -35,8 +35,8 @@ export class LoginComponent extends React.Component<AllProps> {
     }
 
     decodeToLocalStorage = (data:User) => {
-        const decode: User = jwt(data.token);
-        localStorage.setItem('user', JSON.stringify({userToken: data.token, email: decode.email, id: decode.id, img: data.img}));
+        const decode: User = jwt(data.userToken);
+        localStorage.setItem('user', JSON.stringify({userToken: data.userToken, email: decode.email, id: decode.id, img: data.img}));
     }
 
    async validateAndSubmit (values: UserRegister)  {

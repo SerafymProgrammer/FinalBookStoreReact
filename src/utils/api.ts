@@ -1,7 +1,7 @@
-import User from "../store/register/types";
+import {User, UserRegister} from "../store/register/types";
 
 
-export async function callApi(method: string, url: string, path: string, data?: User) {
+export async function callApi(method: string, url: string, path: string, data?: User| UserRegister) {
     const res = await fetch(url  +''+ path, {
       method,
       headers: {

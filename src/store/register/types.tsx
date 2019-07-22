@@ -1,10 +1,10 @@
 
-export default interface User {
+export  interface User {
     id: number;
     email: string;
     passsword:string;
     img: string;
-    token: string
+    userToken: string
   }
   
   export interface UserRegister{

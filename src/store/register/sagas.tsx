@@ -5,7 +5,7 @@ import { callApi } from '../../utils/api'
 import { createBrowserHistory } from 'history';
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'http://localhost:3000'
 
-function* handleFetch(data: any) {
+function* handleFetch(data: ReturnType<typeof registerRequest>) {
   try {
     const res = yield call(callApi, 'POST', API_ENDPOINT, '/auth/register', data.payload)
     const history = createBrowserHistory();
