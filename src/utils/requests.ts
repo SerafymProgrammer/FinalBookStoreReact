@@ -1,6 +1,8 @@
+import User from "../store/changeCurrentUser/types";
+
 export default class userRequests {
 
-    static auth = (user: any) => {
+    static auth = (user: User) => {
       return fetch(`http://localhost:3000/auth/login`, {
         method: 'POST',
         headers: {

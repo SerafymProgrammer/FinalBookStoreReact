@@ -25,7 +25,7 @@ import { connect } from 'react-redux'
   const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'http://localhost:3000/books/'
 
   class BooksIndexPage extends React.Component<AllProps>  {
-    constructor(props: any) {
+    constructor(props: AllProps) {
       super(props);
       this.state = {
         file: '',

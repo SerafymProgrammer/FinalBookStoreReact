@@ -26,7 +26,7 @@ type AllProps = PropsFromState & PropsFromDispatch
   class Header extends React.Component<AllProps>{
 
 
-    constructor(props: any) {
+    constructor(props: AllProps) {
       super(props);
      
     }
@@ -40,7 +40,6 @@ type AllProps = PropsFromState & PropsFromDispatch
 
       let changeImg = currentUser.img;
 
-    
     if(img){
      
       changeImg = img;

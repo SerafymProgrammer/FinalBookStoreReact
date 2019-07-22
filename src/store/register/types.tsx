@@ -1,18 +1,16 @@
 
-export default interface User extends ApiResponse {
+export default interface User {
     id: number;
     email: string;
     passsword:string;
     img: string;
+    token: string
   }
   
-  export interface UserRegister extends ApiResponse {
+  export interface UserRegister{
     email: string;
-    passsword:string;
+    password:string;
   }
-
-  export type ApiResponse = Record<string, any>
-  
 
   export enum RegisterActionTypes {
     REGISTER_REQUEST = '@@register/REGISTER_REQUEST',

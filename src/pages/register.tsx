@@ -13,7 +13,7 @@ import {withRouter} from 'react-router-dom'
 
 type MyProps = { email: string, password: string };
 
-type MyState = { email: string, password: string};
+type MyState = { email: string, password: string, confirm_password: string};
 
 interface PropsFromState {
   loading: boolean
@@ -28,7 +28,7 @@ type AllProps = PropsFromState & PropsFromDispatch & ConnectedReduxProps
 
 class RegistrationIndexPage extends React.Component<AllProps, MyProps, MyState> {
 
-  constructor(props:any) {
+  constructor(props:AllProps) {
     super(props);
     this.state = {
         email: '',
@@ -43,7 +43,7 @@ handleChange = (event:any) => this.setState({
     [event.target.name]: event.target.value
 });
 
-   validate = (values: any) => {
+   validate = (values: MyState) => {
     const errors = {email: '', password: ''}
   
     if (!values.email) {
@@ -58,9 +58,9 @@ handleChange = (event:any) => this.setState({
     } 
     this.setState({
       email:values.email,
-      password: values.passsword
+      password: values.password
   })
-  const addUser: any = this.state!;
+  const addUser: UserRegister = this.state!;
   
   this.props.registerRequest(addUser);
   }

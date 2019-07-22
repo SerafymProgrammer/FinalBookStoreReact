@@ -7,6 +7,7 @@ const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'http://localhost:300
 
 function* handleFetch(data: any) {
   try {
+    delete data.payload.userToken;
     const res = yield call(callApi, 'PUT', API_ENDPOINT, `/users/currUser/${data.payload.id}`, data.payload)
    
     yield put(changeUserSuccess(res.img))

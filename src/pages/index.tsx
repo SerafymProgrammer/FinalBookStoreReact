@@ -13,7 +13,7 @@ interface PropsFromState {
 type AllProps = PropsFromState & ConnectedReduxProps
 
 class HomeIndexPage extends React.Component<AllProps>{
-  constructor(props: any) {
+  constructor(props: AllProps) {
     super(props);
   }
 

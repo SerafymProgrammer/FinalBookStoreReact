@@ -1,4 +1,7 @@
-export async function callApi(method: string, url: string, path: string, data?: any) {
+import User from "../store/register/types";
+
+
+export async function callApi(method: string, url: string, path: string, data?: User) {
     const res = await fetch(url  +''+ path, {
       method,
       headers: {

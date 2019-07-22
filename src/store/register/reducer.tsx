@@ -2,7 +2,7 @@ import { Reducer } from 'redux'
 import { RegisterState, RegisterActionTypes } from './types'
 
 export const initialState: RegisterState = {
-  data: {email: '', passsword: ''},
+  data: {email: '', password: ''},
   errors: undefined,
   loading: false
 }

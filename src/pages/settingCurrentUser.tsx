@@ -21,7 +21,7 @@ type AllProps = PropsFromState & ConnectedReduxProps & PropsFromDispatch
 
 
 class SettingCurrentUser extends React.Component<AllProps>{
-  constructor(props: any) {
+  constructor(props: AllProps) {
     super(props);
     this.state = {
       file: '',
