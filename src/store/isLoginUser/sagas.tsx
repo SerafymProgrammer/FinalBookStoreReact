@@ -18,11 +18,7 @@ function* handlelog() {
     yield put(isLogoutUser())
   }
   
-
-   
 }
-
-
 function* watchFetchRequest() {
 
   yield takeEvery (logUserActionTypes.is_log_user as any,  handlelog)

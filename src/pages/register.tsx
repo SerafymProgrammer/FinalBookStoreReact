@@ -19,22 +19,16 @@ type MyProps = { email: string, password: string };
 
 type MyState = { email: string, password: string};
 
-
-// Separate state props + dispatch props to their own interfaces.
 interface PropsFromState {
   loading: boolean
   data: UserRegister
   errors?: string
 }
 
-// We can use `typeof` here to map our dispatch types to the props, like so.
 interface PropsFromDispatch {
   fetchRequest: typeof fetchRequest
 }
-
-// Combine both state + dispatch props - as well as any props we want to pass - in a union type.
 type AllProps = PropsFromState & PropsFromDispatch & ConnectedReduxProps
-
 
 class RegistrationIndexPage extends React.Component<AllProps, MyProps, MyState> {
 
@@ -47,8 +41,6 @@ class RegistrationIndexPage extends React.Component<AllProps, MyProps, MyState> 
         confirm_password:''
     };
 }
-
-
 
 handleChange = (event:any) => this.setState({
     ...this.state,
@@ -83,7 +75,7 @@ handleChange = (event:any) => this.setState({
   
 
   public render() {
-   // const user: UserRegister = {email: '', passsword: ''};
+
     return (
       <Page>
       <Container>

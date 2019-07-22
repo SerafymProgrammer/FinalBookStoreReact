@@ -40,9 +40,6 @@ export class LoginComponent extends React.Component<AllProps> {
         };
     }
 
-
-
-    
     decodeToLocalStorage = (data:any) => {
         const decode: User = jwt(data.token);
         localStorage.setItem('user', JSON.stringify({email: decode.email, id: decode.id, img: data.img}));
@@ -114,14 +111,11 @@ const mapStateToProps = ({ isLoginUser }: ApplicationState) => ({
    isLogUser: isLoginUser.isLogUser
   })
   
-  // mapDispatchToProps is especially useful for constraining our actions to the connected component.
-  // You can access these via `this.props`.
+
   const mapDispatchToProps = {
     isLogUser
   }
   
-  // Now let's connect our component!
-  // With redux v4's improved typings, we can finally omit generics here.
   export default connect(
     mapStateToProps,
     mapDispatchToProps

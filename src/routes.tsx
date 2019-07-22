@@ -8,16 +8,6 @@ import Register from './pages/register'
 import Login from './pages/login'
 import Books from './pages/books'
 import settingCurrentUser from './pages/settingCurrentUser';
-//import TeamsPage from './pages/teams'
-
-// If your app is big + you have routes with a lot of components, you should consider
-// code-splitting your routes! If you bundle stuff up with Webpack, I recommend `react-loadable`.
-//
-// $ yarn add react-loadable
-// $ yarn add --dev @types/react-loadable
-//
-// The given `pages/` directory provides an example of a directory structure that's easily
-// code-splittable.
 
 const Routes: React.SFC = () => (
   <Root>

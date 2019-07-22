@@ -89,9 +89,7 @@ import { connect } from 'react-redux'
     }
   
   }
-  // It's usually good practice to only include one context at a time in a connected component.
-  // Although if necessary, you can always include multiple contexts. Just make sure to
-  // separate them from each other to prevent prop conflicts.
+
   const mapStateToProps = ({ booksList }: ApplicationState) => ({
     loading: booksList.loading,
     errors: booksList.errors,

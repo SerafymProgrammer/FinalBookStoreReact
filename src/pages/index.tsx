@@ -6,9 +6,6 @@ import { bookCountChanged } from '../store/booksCount/actions';
 import { ConnectedReduxProps, ApplicationState } from '../store';
 import { connect } from 'react-redux';
 
-
-
-
 interface PropsFromState {
   count: number;
 }

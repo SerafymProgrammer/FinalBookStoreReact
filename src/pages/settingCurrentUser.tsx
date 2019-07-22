@@ -8,9 +8,6 @@ import { connect } from 'react-redux';
 import { changeUserRequest } from '../store/changeCurrentUser/actions';
 import User from '../store/register/types';
 
-
-
-
 interface PropsFromState {
   changeUserImg: string;
 }
@@ -45,7 +42,6 @@ class SettingCurrentUser extends React.Component<AllProps>{
         imagePreviewUrl: reader.result
       });
     }
-
     reader.readAsDataURL(file)
   }
 
@@ -85,8 +81,6 @@ public  render() {
 
             <button onClick = {() => this.saveUser(changeImg)}>Change Avatar</button>
             
-
-        
         </PageContent>
       </Container>
     </Page>

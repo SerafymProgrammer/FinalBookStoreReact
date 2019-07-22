@@ -1,7 +1,3 @@
-
-
-
-
 export default class userRequests {
 
     static auth = (user: any) => {

@@ -7,17 +7,14 @@ const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'http://localhost:300
 
 function* handleCount() {
  
-    // To call async functions, use redux-saga's `call()`.
   yield put(bookCountIncrement())
 
-   
 }
 
 function* watchFetchRequest() {
 
   yield takeEvery (BasketActionTypes.BOOKS_COUNT_CHANGED as any,  handleCount)
 }
-
 
 function* basketSaga() {
   yield all([fork(watchFetchRequest)])
