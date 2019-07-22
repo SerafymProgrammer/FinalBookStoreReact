@@ -8,9 +8,6 @@ import { bookCountChanged } from '../store/booksCount/actions';
 import { connect } from 'react-redux';
 import { isLogUser } from '../store/isLoginUser/actions';
 
-
-
-
 interface PropsFromState {
   count: number;
   isUserLoggedIn: boolean;
@@ -31,6 +28,12 @@ type AllProps = PropsFromState & PropsFromDispatch
      
     }
 
+    logOut() {
+      localStorage.removeItem('user');  
+      localStorage.removeItem('currentUserLog');
+      this.props.isLogUser()
+    }
+
     public render() { 
       let { count, isUserLoggedIn, img } = this.props
       const isLogInUser = JSON.parse(localStorage.getItem('currentUserLog') || '{}');
@@ -47,10 +50,8 @@ type AllProps = PropsFromState & PropsFromDispatch
 
    let  $imagePreview = (<img src={changeImg} width = '40' height = '40'/>);
      
-     
       console.log(isLogUser);
 
-      
       return(
       <Wrapper>
       <HeaderInner>
@@ -83,7 +84,7 @@ type AllProps = PropsFromState & PropsFromDispatch
               }
 
           {(isLogInUser.currentUserLogIn) && 
-                <HeaderNavLink to="/login" onClick = {() => { localStorage.removeItem('user');  localStorage.removeItem('currentUserLog');this.props.isLogUser()}} activeClassName={HeaderLinkActive}>
+                <HeaderNavLink to="/login" onClick = {() => { this.logOut() }} activeClassName={HeaderLinkActive}>
                   Logout
                </HeaderNavLink>
          }

@@ -6,8 +6,6 @@ export default interface User {
     img: string;
   }
 
-
-  
   export enum ChangeUserActionTypes {
     CHANGE_USER_REQUEST = '@@change_user/CHANGE_USER_REQUEST',
     CHANGE_SUCCESS = '@@register/CHANGE_SUCCESS',

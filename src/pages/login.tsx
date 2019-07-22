@@ -55,10 +55,9 @@ export class LoginComponent extends React.Component<AllProps> {
       })
     await  requests.auth(this.state)
       .then(data => data.json())
-      .then(res => {this.decodeToLocalStorage(res); this.props.isLogUser()});
-      
-       
-      
+      .then(res => {this.decodeToLocalStorage(res); this.props.isLogUser()}).then(() => {
+        window.location.href = '/'
+      });
       }
 
     handleChange = (event:React.ChangeEvent<HTMLInputElement>) => this.setState({
@@ -74,7 +73,7 @@ export class LoginComponent extends React.Component<AllProps> {
                     <form >
                         <div>
                             <input
-                                type="text"
+                                type="email"
                                 name="email"
                                 placeholder="Email"
                                 onChange={this.handleChange}
@@ -83,7 +82,7 @@ export class LoginComponent extends React.Component<AllProps> {
                         </div>
                         <div>
                             <input
-                                type="text"
+                                type="password"
                                 name="password"
                                 placeholder="Password"
                                 onChange={this.handleChange}
