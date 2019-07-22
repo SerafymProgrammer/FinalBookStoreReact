@@ -73,12 +73,6 @@ public  render() {
       changeImg = imagePreviewUrl;
     }
 
-    
-    // if (imagePreviewUrl) {
-    //    $imagePreview = (<img src={imagePreviewUrl} />);}
-
- 
- 
   return (
     <Page>
       <Container>
