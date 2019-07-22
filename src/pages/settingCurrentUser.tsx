@@ -7,6 +7,7 @@ import { ConnectedReduxProps, ApplicationState } from '../store';
 import { connect } from 'react-redux';
 import { changeUserRequest } from '../store/changeCurrentUser/actions';
 import User from '../store/register/types';
+import { SyntheticEvent } from 'react';
 
 interface PropsFromState {
   changeUserImg: string;
@@ -30,9 +31,9 @@ class SettingCurrentUser extends React.Component<AllProps>{
     this._handleImageChange = this._handleImageChange.bind(this);
   }
 
-  _handleImageChange(e: any) {
+  _handleImageChange(e: any ) {
     e.preventDefault();
-
+    
     let reader = new FileReader();
     let file = e.target.files[0];
 

@@ -61,7 +61,7 @@ export class LoginComponent extends React.Component<AllProps> {
       
       }
 
-    handleChange = (event:any) => this.setState({
+    handleChange = (event:React.ChangeEvent<HTMLInputElement>) => this.setState({
         ...this.state,
         [event.target.name]: event.target.value
     });

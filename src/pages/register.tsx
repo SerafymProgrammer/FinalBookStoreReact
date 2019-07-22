@@ -38,7 +38,7 @@ class RegistrationIndexPage extends React.Component<AllProps, MyProps, MyState> 
     };
 }
 
-handleChange = (event:any) => this.setState({
+handleChange = (event:React.ChangeEvent<HTMLInputElement>) => this.setState({
     ...this.state,
     [event.target.name]: event.target.value
 });
