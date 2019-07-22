@@ -46,7 +46,7 @@ class SettingCurrentUser extends React.Component<AllProps>{
   }
 
 
-  saveUser (img: any) {
+  saveUser (img: string) {
     const CurrUser = localStorage.getItem('user');
     let currentUser = JSON.parse(CurrUser || '{}');
     currentUser.img = img;

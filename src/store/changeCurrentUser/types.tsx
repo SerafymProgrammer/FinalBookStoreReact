@@ -1,12 +1,12 @@
 
-export default interface User extends ApiResponse {
+export default interface User {
     id: number;
     email: string;
     passsword:string;
     img: string;
   }
 
-  export type ApiResponse = Record<string, any>
+
   
   export enum ChangeUserActionTypes {
     CHANGE_USER_REQUEST = '@@change_user/CHANGE_USER_REQUEST',

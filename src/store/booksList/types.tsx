@@ -1,5 +1,5 @@
 
-export interface Book extends ApiResponse {
+export interface Book {
   id: number;
   img: string;
   name: string;
@@ -7,8 +7,6 @@ export interface Book extends ApiResponse {
   price: string;
   description: string;
 }
-
-  export type ApiResponse = Record<string, any>
 
   export enum BooksListActionTypes {
     BOOKS_LIST_REQUEST = '@@register/BooksList_REQUEST',
