@@ -16,17 +16,13 @@ interface PropsFromState {
     isLogUser: boolean;
   }
   
-
   interface PropsFromDispatch {
     isLogUser: typeof isLogUser
     email: string, 
     password: string
   }
-  
 
   type AllProps = PropsFromState & PropsFromDispatch & ConnectedReduxProps
-
-
 
 export class LoginComponent extends React.Component<AllProps> {
     

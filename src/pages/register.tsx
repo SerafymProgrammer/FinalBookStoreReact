@@ -5,15 +5,11 @@ import styled from 'styled-components'
 import { RegisterState, UserRegister } from '../store/register/types';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import { ApplicationState, ConnectedReduxProps } from '../store'
-
 import { registerRequest } from '../store/register/actions'
 import { Dispatch } from 'redux'
 import { createBrowserHistory } from 'history';
 import {withRouter} from 'react-router-dom'
-
-
 
 type MyProps = { email: string, password: string };
 
@@ -26,7 +22,7 @@ interface PropsFromState {
 }
 
 interface PropsFromDispatch {
-  fetchRequest: typeof registerRequest
+  registerRequest: typeof registerRequest
 }
 type AllProps = PropsFromState & PropsFromDispatch & ConnectedReduxProps
 
@@ -47,11 +43,6 @@ handleChange = (event:any) => this.setState({
     [event.target.name]: event.target.value
 });
 
-  public componentDidMount() {
-   
-    
-  }
-
    validate = (values: any) => {
     const errors = {email: '', password: ''}
   
@@ -70,7 +61,8 @@ handleChange = (event:any) => this.setState({
       password: values.passsword
   })
   const addUser: any = this.state!;
-  this.props.fetchRequest(addUser);
+  
+  this.props.registerRequest(addUser);
   }
   
 

@@ -16,7 +16,7 @@ import { connect } from 'react-redux'
   }
   
   interface PropsFromDispatch {
-    fetchRequest: typeof booksListRequest,
+    booksListRequest: typeof booksListRequest,
     bookCountChanged: typeof bookCountChanged
   }
   
@@ -52,7 +52,7 @@ import { connect } from 'react-redux'
     }
 
     public componentDidMount() {
-      this.props.fetchRequest()
+      this.props.booksListRequest()
     }
 
     public render() {
