@@ -30,8 +30,6 @@ export default class userRequests {
         'Accept' : 'application/json'
       };
     }
-  
-    
         return fetch(`http://localhost:3000/users`, {  
         method: 'GET',
         headers: new Headers(httpHeaders)

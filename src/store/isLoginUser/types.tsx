@@ -2,9 +2,9 @@
 export type ApiResponse = Record<string, any>
 
 export enum logUserActionTypes {
-  is_log_user = '@@login/is_log_user',
-  is_logout_user = '@@logout/is_logout_user',
-  is_log_userChange = '@@login/is_log_userChange',
+  IS_LOG_USER = '@@login/is_log_user',
+  IS_LOGOUT_USER = '@@logout/is_logout_user',
+  IS_LOG_USER_CHANGE = '@@login/is_log_userChange',
 
 }
 

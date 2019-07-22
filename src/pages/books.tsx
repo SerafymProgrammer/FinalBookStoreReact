@@ -3,14 +3,10 @@ import Page from '../components/Page'
 import Container from '../components/Container'
 import styled from 'styled-components'
 import { Book } from '../store/booksList/types';
-import { fetchRequest } from '../store/booksList/actions';
+import { booksListRequest } from '../store/booksList/actions';
 import { bookCountChanged } from '../store/booksCount/actions';
 import { ApplicationState, ConnectedReduxProps } from '../store';
 import { connect } from 'react-redux'
-
-
-
-
 
   interface PropsFromState {
     loading: boolean
@@ -20,7 +16,7 @@ import { connect } from 'react-redux'
   }
   
   interface PropsFromDispatch {
-    fetchRequest: typeof fetchRequest,
+    fetchRequest: typeof booksListRequest,
     bookCountChanged: typeof bookCountChanged
   }
   
@@ -97,7 +93,7 @@ import { connect } from 'react-redux'
   })
 
   const mapDispatchToProps = {
-    fetchRequest,
+    booksListRequest,
     bookCountChanged
   }
 

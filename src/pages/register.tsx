@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 import { ApplicationState, ConnectedReduxProps } from '../store'
 
-import { fetchRequest } from '../store/register/actions'
+import { registerRequest } from '../store/register/actions'
 import { Dispatch } from 'redux'
 import { createBrowserHistory } from 'history';
 import {withRouter} from 'react-router-dom'
@@ -26,7 +26,7 @@ interface PropsFromState {
 }
 
 interface PropsFromDispatch {
-  fetchRequest: typeof fetchRequest
+  fetchRequest: typeof registerRequest
 }
 type AllProps = PropsFromState & PropsFromDispatch & ConnectedReduxProps
 
@@ -136,7 +136,7 @@ const mapStateToProps = ({ register }: ApplicationState) => ({
 
 
 const mapDispatchToProps = {
-  fetchRequest
+  registerRequest
 }
 
 export default connect(

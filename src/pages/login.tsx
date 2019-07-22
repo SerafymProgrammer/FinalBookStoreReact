@@ -10,25 +10,23 @@ import { ConnectedReduxProps, ApplicationState } from '../store';
 import { connect } from 'react-redux';
 import jwt from 'jwt-decode';
 import User from '../store/register/types'
-// type MyProps = {  };
 
-//  type MyState = { email: string, password: string};
 
 interface PropsFromState {
     isLogUser: boolean;
   }
   
-  // We can use `typeof` here to map our dispatch types to the props, like so.
+
   interface PropsFromDispatch {
     isLogUser: typeof isLogUser
     email: string, 
     password: string
   }
   
-  // Combine both state + dispatch props - as well as any props we want to pass - in a union type.
+
   type AllProps = PropsFromState & PropsFromDispatch & ConnectedReduxProps
 
-// MyProps MyState
+
 
 export class LoginComponent extends React.Component<AllProps> {
     
@@ -42,7 +40,7 @@ export class LoginComponent extends React.Component<AllProps> {
 
     decodeToLocalStorage = (data:any) => {
         const decode: User = jwt(data.token);
-        localStorage.setItem('user', JSON.stringify({email: decode.email, id: decode.id, img: data.img}));
+        localStorage.setItem('user', JSON.stringify({userToken: data.token, email: decode.email, id: decode.id, img: data.img}));
     }
 
    async validateAndSubmit (values: any)  {

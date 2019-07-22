@@ -9,12 +9,12 @@ export const initialState: isLogUserState = {
 
 const reducer: Reducer<isLogUserState> = (state = initialState, action) => {
   switch (action.type) {
-    case logUserActionTypes.is_log_userChange: {
+    case logUserActionTypes.IS_LOG_USER_CHANGE: {
      
       state.isLogUser = true;
       return { ...state}
     }
-    case logUserActionTypes.is_logout_user: {
+    case logUserActionTypes.IS_LOGOUT_USER: {
      
       
       state.isLogUser = false;

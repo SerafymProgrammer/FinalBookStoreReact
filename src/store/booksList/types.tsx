@@ -11,9 +11,9 @@ export interface Book extends ApiResponse {
   export type ApiResponse = Record<string, any>
 
   export enum BooksListActionTypes {
-    BooksList_REQUEST = '@@register/BooksList_REQUEST',
-    BooksList_SUCCESS = '@@register/BooksList_SUCCESS',
-    BooksList_ERROR = '@@register/BooksList_ERROR'
+    BOOKS_LIST_REQUEST = '@@register/BooksList_REQUEST',
+    BOOKS_LIST_SUCCESS = '@@register/BooksList_SUCCESS',
+    BOOKS_LIST_ERROR = '@@register/BooksList_ERROR'
 
   }
   

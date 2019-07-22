@@ -9,13 +9,13 @@ export const initialState: BooksListState = {
 
 const reducer: Reducer<BooksListState> = (state = initialState, action) => {
   switch (action.type) {
-    case BooksListActionTypes.BooksList_REQUEST: {
+    case BooksListActionTypes.BOOKS_LIST_REQUEST: {
       return { ...state, loading: true }
     }
-    case BooksListActionTypes.BooksList_SUCCESS: {
+    case BooksListActionTypes.BOOKS_LIST_SUCCESS: {
       return { ...state, loading: false, data: action.payload }
     }
-    case BooksListActionTypes.BooksList_ERROR: {
+    case BooksListActionTypes.BOOKS_LIST_ERROR: {
       return { ...state, loading: false, errors: action.payload }
     }
     default: {

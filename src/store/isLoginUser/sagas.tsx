@@ -3,8 +3,6 @@ import { logUserActionTypes } from './types'
 import { isLogUserChange, isLogoutUser } from './actions'
 import { callApi } from '../../utils/api'
 
-const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'http://localhost:3000'
-
 function* handlelog() {
  
   if(localStorage.getItem('user')){
@@ -21,7 +19,7 @@ function* handlelog() {
 }
 function* watchFetchRequest() {
 
-  yield takeEvery (logUserActionTypes.is_log_user as any,  handlelog)
+  yield takeEvery (logUserActionTypes.IS_LOG_USER as any,  handlelog)
 }
 
 function* isLoggedSaga() {

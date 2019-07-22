@@ -1,8 +1,8 @@
 import { action } from 'typesafe-actions'
 import { logUserActionTypes} from './types'
 
-export const isLogUser = () => action(logUserActionTypes.is_log_user)
-export const isLogoutUser = () => action(logUserActionTypes.is_logout_user)
-export const isLogUserChange = () => action(logUserActionTypes.is_log_userChange)
+export const isLogUser = () => action(logUserActionTypes.IS_LOG_USER)
+export const isLogoutUser = () => action(logUserActionTypes.IS_LOGOUT_USER)
+export const isLogUserChange = () => action(logUserActionTypes.IS_LOG_USER_CHANGE)
 
 
