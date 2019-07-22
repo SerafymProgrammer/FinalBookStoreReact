@@ -55,9 +55,9 @@ export class LoginComponent extends React.Component<AllProps> {
       })
     await  requests.auth(this.state)
       .then(data => data.json())
-      .then(res => this.decodeToLocalStorage(res));
+      .then(res => {this.decodeToLocalStorage(res); this.props.isLogUser()});
       
-       this.props.isLogUser()
+       
       
       }
 
