@@ -141,6 +141,7 @@ export default connect(
 const PageContent = styled('article')`
  
   margin: 0 auto;
+  width: 200px;
   line-height: 1.6;
 
   a {

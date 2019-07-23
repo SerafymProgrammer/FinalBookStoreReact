@@ -67,6 +67,7 @@ export class LoginComponent extends React.Component<AllProps> {
 
     render(){
         return(
+          <Page>
             <LoginContent>
                 <div className="panel">
                     <h2>Log in</h2>
@@ -97,6 +98,7 @@ export class LoginComponent extends React.Component<AllProps> {
                     </form>
                 </div>
             </LoginContent>
+            </Page>
         )
     }
 }
@@ -122,12 +124,5 @@ const LoginContent = styled('article')`
     a {
         color: blue;
     }
-    h1,
-    h2,
-    h3,
-    h4 {
-        margin-bottom: 0.5rem;
-        font-family: Arial;
-        line-height: 1.25;
-    }
+  
 `

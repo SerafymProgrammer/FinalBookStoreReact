@@ -6,25 +6,20 @@ import { bookCountChanged } from '../store/booksCount/actions';
 import { ConnectedReduxProps, ApplicationState } from '../store';
 import { connect } from 'react-redux';
 
-interface PropsFromState {
-  countBooksInBasket: number;
-}
 
-type AllProps = PropsFromState & ConnectedReduxProps
 
-class HomeIndexPage extends React.Component<AllProps>{
-  constructor(props: AllProps) {
-    super(props);
-  }
+
+class HomeIndexPage extends React.Component{
+  
 
 public  render() {
 
-  const {countBooksInBasket} = this.props
+
   return (
     <Page>
       <Container>
         <PageContent>
-          <h1>{countBooksInBasket}</h1>
+        
 
           <h1>Welcome!</h1>
           <p>

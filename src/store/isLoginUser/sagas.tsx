@@ -12,7 +12,7 @@ function* handlelog() {
     yield put(isLogUserChange())
   }
   else {
-  
+ 
     yield put(isLogoutUser())
   }
   

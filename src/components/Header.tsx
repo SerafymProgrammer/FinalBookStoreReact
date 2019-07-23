@@ -118,7 +118,7 @@ type AllProps = PropsFromState & PropsFromDispatch
 
 const Wrapper = styled('header')`
   padding: 0.5rem 1.5rem;
-  background-color: red;
+  background-color: #a2c8ea;
   color: black;
   font-family: Fantasy;
 `
