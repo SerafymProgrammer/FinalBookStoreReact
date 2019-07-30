@@ -22,7 +22,7 @@ import { connect } from 'react-redux'
   
   type AllProps = PropsFromState & PropsFromDispatch & ConnectedReduxProps
   
-  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || 'http://localhost:3000/books/'
+
 
   class BooksIndexPage extends React.Component<AllProps>  {
     constructor(props: AllProps) {

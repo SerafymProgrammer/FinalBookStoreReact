@@ -2,7 +2,7 @@ import { combineReducers, Dispatch, Action, AnyAction } from 'redux'
 import { all, fork } from 'redux-saga/effects'
 import { connectRouter, RouterState } from 'connected-react-router'
 import { History } from 'history'
-import { usersReducer } from './register/reducer';
+import { registerReducer } from './register/reducer';
 import registerSaga from './register/sagas'
 import { RegisterState } from './register/types';
 import { BooksListState } from './booksList/types';
@@ -17,8 +17,12 @@ import isLoggedSaga from './isLoginUser/sagas';
 import { changeUserReducer } from './changeCurrentUser/reducer';
 import changeUserSaga from './changeCurrentUser/sagas';
 import { ChangeUserState } from './changeCurrentUser/types';
+import { UsersListState } from './usersList/types';
+import usersSaga from './usersList/sagas';
+import { usersReducer } from './usersList/reducer';
 
 export interface ApplicationState {
+  usersList: UsersListState,
   changeCurrentUser: ChangeUserState,
   isLoginUser: isLogUserState,
   booksCount: BasketState,
@@ -39,10 +43,11 @@ export const createRootReducer = (history: History) =>
     isLoginUser: isLoggedReducer,
     booksCount: basketReducer,
     booksList: booksReducer,
-    register: usersReducer,
+    register: registerReducer,
+    usersList: usersReducer,
     router: connectRouter(history)
   })
 
 
  export function* rootSaga() {
-   yield all([fork(registerSaga), fork(booksSaga), fork(basketSaga),fork(isLoggedSaga), fork(changeUserSaga)]) }
+   yield all([fork(registerSaga), fork(booksSaga), fork(basketSaga),fork(isLoggedSaga), fork(changeUserSaga), fork(usersSaga)]) }

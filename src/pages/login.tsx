@@ -53,9 +53,7 @@ export class LoginComponent extends React.Component<AllProps> {
           email:values.email,
           password: values.password
       })
-    await  requests.auth(this.state)
-      .then(data => data.json())
-      .then(res => {this.decodeToLocalStorage(res); this.props.isLogUser()}).then(() => {
+    await requests.auth(this.state).then(data => data.json()).then(res => {this.decodeToLocalStorage(res); this.props.isLogUser()}).then(() => {
         window.location.href = '/'
       });
       }

@@ -24,4 +24,4 @@ const reducer: Reducer<RegisterState> = (state = initialState, action) => {
   }
 }
 
-export { reducer as usersReducer }
+export { reducer as registerReducer }

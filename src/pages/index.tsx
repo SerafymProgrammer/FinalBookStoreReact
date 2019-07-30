@@ -6,15 +6,9 @@ import { bookCountChanged } from '../store/booksCount/actions';
 import { ConnectedReduxProps, ApplicationState } from '../store';
 import { connect } from 'react-redux';
 
-
-
-
 class HomeIndexPage extends React.Component{
   
-
 public  render() {
-
-
   return (
     <Page>
       <Container>

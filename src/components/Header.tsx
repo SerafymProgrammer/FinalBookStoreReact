@@ -7,6 +7,7 @@ import { ConnectedReduxProps, ApplicationState } from '../store';
 import { bookCountChanged } from '../store/booksCount/actions';
 import { connect } from 'react-redux';
 import { isLogUser } from '../store/isLoginUser/actions';
+import Popup from "reactjs-popup";
 
 interface PropsFromState {
   count: number;
@@ -20,87 +21,92 @@ interface PropsFromDispatch {
 
 type AllProps = PropsFromState & PropsFromDispatch
 
-  class Header extends React.Component<AllProps>{
+class Header extends React.Component<AllProps>{
 
 
-    constructor(props: AllProps) {
-      super(props);
-     
-    }
+  constructor(props: AllProps) {
+    super(props);
 
-    logOut() {
-      localStorage.removeItem('user');  
-      localStorage.removeItem('currentUserLog');
-      this.props.isLogUser()
-    }
+  }
 
-    public render() { 
-      let { count, isUserLoggedIn, img } = this.props
-      const isLogInUser = JSON.parse(localStorage.getItem('currentUserLog') || '{}');
-    
-      const CurrUser = localStorage.getItem('user');
-      const currentUser = JSON.parse(CurrUser || '{}');
+  logOut() {
+    localStorage.removeItem('user');
+    localStorage.removeItem('currentUserLog');
+    this.props.isLogUser()
+  }
 
-      let changeImg = currentUser.img;
+  public render() {
+    let { count, isUserLoggedIn, img } = this.props
+    const isLogInUser = JSON.parse(localStorage.getItem('currentUserLog') || '{}');
 
-    if(img){
-     
+    const CurrUser = localStorage.getItem('user');
+    const currentUser = JSON.parse(CurrUser || '{}');
+
+    let changeImg = currentUser.img;
+
+    if (img) {
+
       changeImg = img;
     }
 
-   let  $imagePreview = (<img src={changeImg} width = '40' height = '40'/>);
-     
-      console.log(isLogUser);
+    let $imagePreview = (<img src={changeImg} width='40' height='40' />);
 
-      return(
+    console.log(isLogUser);
+
+    return (
       <Wrapper>
-      <HeaderInner>
-        <HeaderLeft>
-          <Title>Book Store</Title>
-        </HeaderLeft>
-        <HeaderNav>
-          <HeaderNavLink exact to="/" activeClassName={HeaderLinkActive}>
-            Home
+        <HeaderInner>
+          <HeaderLeft>
+            <Title>Book Store</Title>
+          </HeaderLeft>
+          <HeaderNav>
+            <HeaderNavLink exact to="/" activeClassName={HeaderLinkActive}>
+              Home
           </HeaderNavLink>
-          <HeaderNavLink to="/books" activeClassName={HeaderLinkActive}>
-            Books
+            <HeaderNavLink to="/books" activeClassName={HeaderLinkActive}>
+              Books
           </HeaderNavLink>
-          {(!isLogInUser.currentUserLogIn) && 
-                <HeaderNavLink to="/register" activeClassName={HeaderLinkActive}>
-                  Register
-              </HeaderNavLink>   
-          }
+            {(!isLogInUser.currentUserLogIn) &&
+              <HeaderNavLink to="/register" activeClassName={HeaderLinkActive}>
+                Register
+              </HeaderNavLink>
+            }
 
-         {(!isLogInUser.currentUserLogIn) && 
-                <HeaderNavLink to="/login" activeClassName={HeaderLinkActive}>
-                  Login
+            {(!isLogInUser.currentUserLogIn) &&
+              <HeaderNavLink to="/login" activeClassName={HeaderLinkActive}>
+                Login
                </HeaderNavLink>
-         }
+            }
 
-              {(isLogInUser.currentUserLogIn) &&
-                <HeaderNavLink to="/setting-user" onClick={() => { }} activeClassName={HeaderLinkActive}>
-                 Hello User {$imagePreview}
+            {(isLogInUser.currentUserLogIn) &&
+              <HeaderNavLink to="/setting-user" onClick={() => { }} activeClassName={HeaderLinkActive}>
+                Hello User {$imagePreview}
+              </HeaderNavLink>
+            }
+            {(isLogInUser.currentUserLogIn) &&
+              <HeaderNavLink to="/admin-panel" onClick={() => { }} activeClassName={HeaderLinkActive}>
+                Admin Zone
                </HeaderNavLink>
-              }
+            }
 
-          {(isLogInUser.currentUserLogIn) && 
-                <HeaderNavLink to="/login" onClick = {() => { this.logOut() }} activeClassName={HeaderLinkActive}>
-                  Logout
+            {(isLogInUser.currentUserLogIn) &&
+              <HeaderNavLink to="/login" onClick={() => { this.logOut() }} activeClassName={HeaderLinkActive}>
+                Logout
                </HeaderNavLink>
-         }
-         {(isLogInUser.currentUserLogIn) &&
-            <p>Basket: {count}</p>
-          } 
-         
-        </HeaderNav>
-     
-        
-      </HeaderInner>
-    </Wrapper>)
-}
-  
+            }
+            {(isLogInUser.currentUserLogIn) &&
+              <p>Basket: {count}</p>
+            }
+
+          </HeaderNav>
+
+
+        </HeaderInner>
+      </Wrapper>)
   }
-  
+
+}
+
   const mapStateToProps = ({ booksCount, isLoginUser, changeCurrentUser }: ApplicationState) => ({
     img: changeCurrentUser.img,
     count: booksCount.count,
@@ -133,6 +139,11 @@ const HeaderInner = styled(Container)`
 
 const HeaderLeft = styled('div')`
   padding-right: 1rem;
+`
+
+const Popupchik = styled('div')`
+  width: 300px;
+  height: 400px;
 `
 
 const HeaderNav = styled('nav')`
